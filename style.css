@@ -9,6 +9,10 @@ body {
     background-color: #b91450;
 }
 
+section{
+    padding-top: 30px;
+}
+
 /*? Sezione richiesta dati */
 
 .custom-form-card {
@@ -35,3 +39,41 @@ body {
     background-color: #b91450;
     color: white;
 }
+
+/*? Sezione Ticket */
+
+.ticket {
+    height: 300px;
+    
+    display: flex;
+    
+}
+
+.header-ticket {
+    height: 50px;
+    background-color: #ffa04f;
+    border-radius: 10px 10px 0 0;
+}
+
+.left-ticket {
+    background-color: antiquewhite;
+    width: 70%;
+    border-right: 1px dotted black;
+    border-radius: 10px;
+}
+
+.right-ticket {
+    background-color: antiquewhite;
+    width: 30%;
+    border-right: 1px dotted black;
+    border-radius: 10px;
+}
+/*.footer-ticket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 20px;
+    background-color: white;
+}*/
