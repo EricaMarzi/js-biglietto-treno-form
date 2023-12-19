@@ -55,6 +55,15 @@ section{
     border-radius: 10px 10px 0 0;
 }
 
+.ticket .col > * {
+    padding-bottom: 15px;
+}
+
+.info-ticket {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .left-ticket {
     background-color: antiquewhite;
     width: 70%;
