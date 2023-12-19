@@ -1,18 +1,4 @@
 console.log("JS OK")
-
-/* 
-
-MILESTONE 2:
-Solo una volta che la milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
-Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
-Nota:
-Se non vi sentite particolarmente creativi, vi forniamo uno screenshot da seguire per il secondo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. 
-BONUS
-- Aggiungere il tasto annulla per riportare i campi al valore originale
-- Usare una select per inserire l'età
-- Stampare sul biglietto un numero di carrozza e un numero di biglietto casuali
-*/
-
 /* 
 MILESTONE 1
 1.1 - Creo in pagina il form base 
@@ -37,20 +23,25 @@ BONUS
 // Richiamo gli elementi necessari in JS assegnando una variabile
 const inputKms = document.getElementById("kms");
 const inputAge = document.getElementById("age");
-const button = document.getElementById("search");
+const buttonSearch = document.getElementById("search");
 const paragraph = document.getElementById("paragraph");
 // 2.2 Richiamo l'elemento e recupero il valore
 const inputFirstName = document.getElementById("first-name");
 const inputLastName = document.getElementById("last-name");
-console.log(inputKms, inputAge, button, paragraph);
+console.log(inputKms, inputAge, buttonSearch, paragraph);
 
-button.addEventListener("click", function() {
+let kms;
+let age;
+let firstName;
+let lastName;
+
+buttonSearch.addEventListener("click", function() {
     // Recupero il valore dell'input
-    const kms = parseInt(inputKms.value);
-    const age = parseInt(inputAge.value);
-    const firstName = (inputFirstName.value);
-    const lastName = (inputLastName.value);
-    const userName = firstName + " " + lastName;
+    kms = parseInt(inputKms.value);
+    age = parseInt(inputAge.value);
+    firstName = (inputFirstName.value);
+    lastName = (inputLastName.value);
+    userName = firstName + " " + lastName;
     console.log(kms, age, firstName, userName);
     
     // Valido le informazioni ricevute
@@ -79,6 +70,8 @@ button.addEventListener("click", function() {
         offer = "Senior"
         console.log("sconto:", discount);
     }
+
+    //! metti il validatore per la sezione nome e cognome
     
     // Calcolo nuovo prezzo scontato
     const discountPrice = basePrice - discount;
@@ -117,5 +110,12 @@ button.addEventListener("click", function() {
 })
 
 
-
-//! metti il validatore per la sezione nome e cognome
+// Svuota campi
+const buttonClean = document.getElementById("cancel");
+buttonClean.addEventListener("click", function() {
+    kms = "";
+    age = "";
+    firstName = "";
+    lastName = "";
+}) //! non va ;;
+    
