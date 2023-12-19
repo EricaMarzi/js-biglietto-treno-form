@@ -4,15 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acquista il biglietto online</title>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div>
-            <input id="name" type="text" placeholder="Inserisci nome e cognome">
-            <input id="kms" type="number" placeholder="Inserire km" min="1">
-            <input id="age" type="number" placeholder="Inserire età" min="1">
-            <button id="search">Cerca</button>
-        </div>
-        <p id="paragraph"></p>
+    <!--Sezione richiesta dati-->
+    <main>
+        <section py-3>
+            <h1 class="text-white text-uppercase text-center">Calcola il prezzo del tuo biglietto</h1>
+            <div class="container py-2 custom-form-card">
+                <div class="row d-flex justify-content-center text-center pt-5 pb-3 gy-3">
+
+                    <!--Richiesta nome e cognome-->
+                    <div class="col-10">
+                        <div class="input-group">
+                            <span class="input-group-text text-magenta">Nome e Cognome</span>
+                            <input id="first-name" type="text" aria-label="First name" class="form-control">
+                            <input id="last-name" type="text" aria-label="Last name" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <!--Richiesta km-->
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="kms" class="form-label text-magenta">Km da percorrere</label>
+                            <div class="input-group">
+                              <input type="number" class="form-control" id="kms" aria-describedby="basic-addon3 basic-addon4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Richiesta età-->
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="age" class="form-label text-magenta">Fascia d'età</label>
+                            <div class="input-group">
+                              <input type="number" class="form-control" id="age" aria-describedby="basic-addon3 basic-addon4">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row d-flex justify-content-center text-center">
+                    <!--Bottoni-->
+                    <div class="col-2">
+                        <button id="search" type="button" class="btn btn-outline custom-btn">Cerca</button>
+                    </div>
+                    <div class="col-2">
+                        <button id="cancel" type="button" class="btn btn-outline custom-btn">Annulla</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+            <p id="paragraph"></p>
+    </main>
     
 <script src="script.js"></script>
 </body>

@@ -36,15 +36,18 @@ const inputAge = document.getElementById("age");
 const button = document.getElementById("search");
 const paragraph = document.getElementById("paragraph")
 // 2.2 Richiamo l'elemento e recupero il valore
-const inputName = document.getElementById("name")
-console.log(inputKms, inputAge, button, paragraph, inputName);
+const inputFirstName = document.getElementById("first-name")
+const inputLastName = document.getElementById("last-name")
+console.log(inputKms, inputAge, button, paragraph);
 
 button.addEventListener("click", function() {
     // Recupero il valore dell'input
     const kms = parseInt(inputKms.value);
     const age = parseInt(inputAge.value);
-    const userName = (inputName.value)
-    console.log(kms, age, userName);
+    const firstName = (inputFirstName.value)
+    const lastName = (inputLastName.value)
+    const userName = firstName + " " + lastName
+    console.log(kms, age, firstName, userName);
     
     // Valido le informazioni ricevute
     if (isNaN(kms) || isNaN(age)) {
@@ -61,7 +64,7 @@ button.addEventListener("click", function() {
     console.log ("prezzo base:", basePrice)
     
     // Applico un eventuale sconto per fascia d'età
-    let discount = null
+    let discount = ""
     if (age < 18) {
         discount = basePrice * 0.2
         console.log("sconto:", discount)

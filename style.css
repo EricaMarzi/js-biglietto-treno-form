@@ -1,0 +1,37 @@
+/** CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b91450;
+}
+
+/*? Sezione richiesta dati */
+
+.custom-form-card {
+ background-color: white;
+ height: 300px;
+
+ border-radius: 20px;
+ box-shadow: 0 0 10px gray;
+}
+
+.text-magenta {
+    color: #b91450;
+    font-weight: 600;
+}
+
+/** Style btn */
+
+.custom-btn {
+    color: #b91450;
+    border-color: currentColor;
+}
+
+.custom-btn:hover {
+    background-color: #b91450;
+    color: white;
+}
