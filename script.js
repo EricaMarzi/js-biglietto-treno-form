@@ -28,25 +28,29 @@ MILESTONE 2
 1.2 - Aggiungi input in pagina
 2.2 - Richiamo l'elemento e recupera il valore
 3.2 - Valido le informazioni ricevute
+
+BONUS
+- Fase creativa perditempo (html+css)
+
 */
 
 // Richiamo gli elementi necessari in JS assegnando una variabile
 const inputKms = document.getElementById("kms");
 const inputAge = document.getElementById("age");
 const button = document.getElementById("search");
-const paragraph = document.getElementById("paragraph")
+const paragraph = document.getElementById("paragraph");
 // 2.2 Richiamo l'elemento e recupero il valore
-const inputFirstName = document.getElementById("first-name")
-const inputLastName = document.getElementById("last-name")
+const inputFirstName = document.getElementById("first-name");
+const inputLastName = document.getElementById("last-name");
 console.log(inputKms, inputAge, button, paragraph);
 
 button.addEventListener("click", function() {
     // Recupero il valore dell'input
     const kms = parseInt(inputKms.value);
     const age = parseInt(inputAge.value);
-    const firstName = (inputFirstName.value)
-    const lastName = (inputLastName.value)
-    const userName = firstName + " " + lastName
+    const firstName = (inputFirstName.value);
+    const lastName = (inputLastName.value);
+    const userName = firstName + " " + lastName;
     console.log(kms, age, firstName, userName);
     
     // Valido le informazioni ricevute
@@ -59,25 +63,59 @@ button.addEventListener("click", function() {
     }
     
     // Calcolo il prezzo per km
-    const kmPrice = 0.21
-    let basePrice = kms * kmPrice
-    console.log ("prezzo base:", basePrice)
+    const kmPrice = 0.21;
+    let basePrice = kms * kmPrice;
+    console.log ("prezzo base:", basePrice);
     
     // Applico un eventuale sconto per fascia d'età
-    let discount = ""
+    let discount = "";
+    let offer = "Adult"
     if (age < 18) {
         discount = basePrice * 0.2
-        console.log("sconto:", discount)
+        offer = "Young"
+        console.log("sconto:", discount);
     } else if (age >= 65) {
-        discount = basePrice * 0.4
-        console.log("sconto:", discount)
+        discount = basePrice * 0.4;
+        offer = "Senior"
+        console.log("sconto:", discount);
     }
     
     // Calcolo nuovo prezzo scontato
-    const discountPrice = basePrice - discount
-    console.log ("prezzo scontato:", discountPrice)
+    const discountPrice = basePrice - discount;
+    console.log ("prezzo scontato:", discountPrice);
+
+    // Randomizzatore carrozza
+    const minCarriage = 1
+    const maxCarriage = 10
+    const randomCarriage = Math.floor(Math.random() * (maxCarriage - minCarriage +1)) + minCarriage;
+    console.log(randomCarriage)
+    
+    // Randomizzatore codice
+    const minCode = 10000
+    const maxCode = 99999
+    const randomCode = Math.floor(Math.random() * (maxCode - minCode +1)) + minCode;
+    console.log(randomCode)
     
     
     // Stampo in pagina
-    paragraph.innerHTML = userName + " il Tuo biglietto costa: " + `<strong>${discountPrice.toFixed(2)}€</strong>`
+
+    const passengerName = document.querySelector(".passenger"); //!perché All non va?
+    passengerName.innerText = userName;
+
+    const ticketPrice = document.querySelector(".ticket-price");
+    ticketPrice.innerText = discountPrice.toFixed(2) + "€";
+    
+    const carriageNumber = document.querySelector(".carriage-number");
+    carriageNumber.innerText = randomCarriage;
+
+    const codeNumber = document.querySelector(".code-number");
+    codeNumber.innerText = randomCode;
+    
+    const ticketOffer = document.querySelector(".ticket-offer");
+    ticketOffer.innerText = offer;
+    
 })
+
+
+
+//! metti il validatore per la sezione nome e cognome

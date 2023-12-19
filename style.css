@@ -44,9 +44,7 @@ section{
 
 .ticket {
     height: 300px;
-    
     display: flex;
-    
 }
 
 .header-ticket {
@@ -77,12 +75,3 @@ section{
     border-right: 1px dotted black;
     border-radius: 10px;
 }
-/*.footer-ticket {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 20px;
-    background-color: white;
-}*/
