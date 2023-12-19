@@ -27,26 +27,49 @@ BONUS
 - Richiamo gli elementi necessari in JS assegnando una variabile
 - Recupero il valore dell'input
 - Valido le informazioni ricevute
+- Calcolo il prezzo per km
+- Applico un eventuale sconto per fascia d'età
+- Calcolo nuovo prezzo scontato
 */
 
+// Richiamo gli elementi necessari in JS assegnando una variabile
 const inputKms = document.getElementById("kms");
 const inputAge = document.getElementById("age");
 const button = document.getElementById("search");
 console.log(inputKms, inputAge, button);
 
 button.addEventListener("click", function() {
+    // Recupero il valore dell'input
     const kms = parseInt(inputKms.value);
     const age = parseInt(inputAge.value);
     console.log(kms, age);
     
+    // Valido le informazioni ricevute
     if (isNaN(kms) || isNaN(age)) {
         alert("Valore errato, inserisci dei numeri");
         return;
     } else if (kms < 1 || age < 1) {
-        alert("Valore errato");
+        alert("Valore errato, valore minimo 1");
         return;
     }
-
     
+    // Calcolo il prezzo per km
+    const kmPrice = 0.21
+    let basePrice = kms * kmPrice
+    console.log ("prezzo base:", basePrice)
+    
+    // Applico un eventuale sconto per fascia d'età
+    let discount = null
+    if (age < 18) {
+        discount = basePrice * 0.2
+        console.log("sconto:", discount)
+    } else if (age >= 65) {
+        discount = basePrice * 0.4
+        console.log("sconto:", discount)
+    }
+    
+    // Calcolo nuovo prezzo scontato
+    const discountPrice = basePrice - discount
+    console.log ("prezzo scontato:", discountPrice)
 
 })
