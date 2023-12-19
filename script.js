@@ -15,16 +15,19 @@ BONUS
 
 /* 
 MILESTONE 1
-- Creo in pagina il form base 
-- Richiamo gli elementi necessari in JS assegnando una variabile
-- Recupero il valore dell'input
-- Valido le informazioni ricevute
-- Calcolo il prezzo per km
-- Applico un eventuale sconto per fascia d'età
-- Calcolo nuovo prezzo scontato
-- Stampo in pagina
+1.1 - Creo in pagina il form base 
+2.1 - Richiamo gli elementi necessari in JS assegnando una variabile
+3.1 - Recupero il valore dell'input
+4.1 - Valido le informazioni ricevute
+5.1 - Calcolo il prezzo per km
+6.1 - Applico un eventuale sconto per fascia d'età
+7.1 - Calcolo nuovo prezzo scontato
+8.1 - Stampo in pagina
 
 MILESTONE 2
+1.2 - Aggiungi input in pagina
+2.2 - Richiamo l'elemento e recupera il valore
+3.2 - Valido le informazioni ricevute
 */
 
 // Richiamo gli elementi necessari in JS assegnando una variabile
@@ -32,13 +35,16 @@ const inputKms = document.getElementById("kms");
 const inputAge = document.getElementById("age");
 const button = document.getElementById("search");
 const paragraph = document.getElementById("paragraph")
-console.log(inputKms, inputAge, button, paragraph);
+// 2.2 Richiamo l'elemento e recupero il valore
+const inputName = document.getElementById("name")
+console.log(inputKms, inputAge, button, paragraph, inputName);
 
 button.addEventListener("click", function() {
     // Recupero il valore dell'input
     const kms = parseInt(inputKms.value);
     const age = parseInt(inputAge.value);
-    console.log(kms, age);
+    const userName = (inputName.value)
+    console.log(kms, age, userName);
     
     // Valido le informazioni ricevute
     if (isNaN(kms) || isNaN(age)) {
@@ -70,5 +76,5 @@ button.addEventListener("click", function() {
     
     
     // Stampo in pagina
-    paragraph.innerHTML = "Il Tuo biglietto costa: " + `<strong>${discountPrice.toFixed(2)}€</strong>`
+    paragraph.innerHTML = userName + " il Tuo biglietto costa: " + `<strong>${discountPrice.toFixed(2)}€</strong>`
 })
